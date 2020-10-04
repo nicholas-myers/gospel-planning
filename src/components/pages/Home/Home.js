@@ -6,7 +6,12 @@ import LandingPage from "./LandingPage";
 import FamilyChart from "../FamilyChart/FamilyChart";
 import FamilyPlanning from "../FamilyPlanning/FamilyPlanning";
 import HomeEvening from "../HomeEvening/HomeEvening";
-import { homepaths, homelinks, journallinks, journalpaths} from "../../common/links"
+import {
+  homepaths,
+  homelinks,
+  journallinks,
+  journalpaths,
+} from "../../common/links";
 
 const { Header, Content, Sider } = Layout;
 
@@ -42,7 +47,9 @@ function Home() {
         <nav>
           {homelinks.map((link, index) => {
             return (
-              <Button onClick={() => handleLink(homepaths[index])}>{link}</Button>
+              <Button onClick={() => handleLink(homepaths[index])}>
+                {link}
+              </Button>
             );
           })}
           {profile == false ? (
@@ -88,10 +95,18 @@ function Home() {
               width: "100%",
             }}
           >
-            {location.pathname == "/journal" &&
-              journallinks.map((link) => {
-                return <Button style={{ margin: "1rem" }}>{link}</Button>;
+            <Route path="/journal">
+              {journallinks.map((link, index) => {
+                return (
+                  <Button
+                    onClick={() => history.push(journalpaths[index])}
+                    style={{ margin: "2rem" }}
+                  >
+                    {link}
+                  </Button>
+                );
               })}
+            </Route>
           </div>
         </Sider>
       </Content>
