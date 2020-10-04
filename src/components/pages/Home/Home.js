@@ -7,31 +7,24 @@ import FamilyChart from "../FamilyChart/FamilyChart";
 import FamilyPlanning from "../FamilyPlanning/FamilyPlanning";
 import HomeEvening from "../HomeEvening/HomeEvening";
 
-const { Header, Content } = Layout;
+const { Header, Content, Sider } = Layout;
 
 function Home() {
   const history = useHistory();
   const location = useLocation();
   console.log(location.pathname);
 
-  const goHome = () => {
-    history.push("/");
-  };
+  const paths = [
+    "/",
+    "/journal",
+    "/familychart",
+    "/familyplanning",
+    "/home-evening",
+  ];
+  const homelinks = ["Home", "Journal", "Chart", "Plan", "Home Evening"];
 
-  const goJournal = () => {
-    history.push("/journal");
-  };
-
-  const goChart = () => {
-    history.push("/familychart");
-  };
-
-  const goPlanning = () => {
-    history.push("/familyplanning");
-  };
-
-  const goHomeEvening = () => {
-    history.push("/home-evening");
+  const handleLink = (path) => {
+    history.push(path);
   };
 
   const [profile, setProfile] = useState(false);
@@ -45,19 +38,21 @@ function Home() {
   };
 
   return (
-    <Layout>
-      <Header style={{ backgroundColor: "white" }}>
-        {location.pathname == "/" ? (
-          <h1>Family Spirit</h1>
-        ) : (
-          <h1>Myers Family</h1>
-        )}
+    <Layout
+      style={{
+        backgroundColor: "skyblue",
+        display: "flex",
+        flexFlow: "column",
+      }}
+    >
+      <Header style={{ backgroundColor: "seagreen" }}>
+        <h1>Gospel Planning</h1>
         <nav>
-          <Button onClick={goHome}>Home</Button>
-          <Button onClick={goJournal}>Journal</Button>
-          <Button onClick={goChart}>Chart</Button>
-          <Button onClick={goPlanning}>Planning</Button>
-          <Button onClick={goHomeEvening}>Home Evening</Button>
+          {homelinks.map((link, index) => {
+            return (
+              <Button onClick={() => handleLink(paths[index])}>{link}</Button>
+            );
+          })}
           {profile == false ? (
             <Button onClick={login}>Login</Button>
           ) : (
@@ -66,7 +61,16 @@ function Home() {
           {profile && <Button onClick={logout}>Logout</Button>}
         </nav>
       </Header>
-      <Content style={{padding: '2rem'}}>
+      <Content
+        style={{
+          margin: "0 2rem",
+          height: "100vh",
+          backgroundColor: "skyblue",
+          display: "flex",
+          flexFlow: "row",
+          justifyContent: "space-between",
+        }}
+      >
         <Route path="/home-evening">
           <HomeEvening />
         </Route>
@@ -82,6 +86,9 @@ function Home() {
         <Route path="/journal">
           <Journal />
         </Route>
+        <Sider style={{ backgroundColor: "#534239", color: "#715a4e" }}>
+          Side Nav goes here.
+        </Sider>
       </Content>
     </Layout>
   );
