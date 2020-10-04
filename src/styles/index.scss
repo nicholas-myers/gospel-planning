@@ -7,4 +7,13 @@ header {
     flex-flow: row;
     justify-content: space-around;
     align-items: center;
+    nav {
+        width: 50%;
+        display: flex;
+        justify-content: space-around;
+    }
+}
+
+button {
+    background-color: white;
 }
