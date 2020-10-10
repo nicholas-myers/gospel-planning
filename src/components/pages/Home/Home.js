@@ -78,7 +78,7 @@ function Home() {
         <div className="side-nav">
           <Route path="/journal">
             {journallinks.map((link, index) => {
-              return <NavLink to={journalpaths[index]}>{link}</NavLink>;
+              return <NavLink to={journalpaths[index]} activeStyle={{backgroundColor: 'skyblue'}}>{link}</NavLink>;
             })}
           </Route>
         </div>

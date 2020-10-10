@@ -19,7 +19,7 @@ function Journal() {
 
   return (
     <div className="journal">
-      <Route exact path="/journal">
+      <Route path="/journal/entries">
         <Entries />
       </Route>
       <Route path="/journal/testimony">
