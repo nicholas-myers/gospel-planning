@@ -1,5 +1,5 @@
 export const homepaths = [
-    "/journal/entries",
+    "/journal",
     "/familychart",
     "/familyplanning",
     "/home-evening",
@@ -14,4 +14,4 @@ export const homepaths = [
     "Talks",
   ];
 
-export const journalpaths = ["/journal/entries", "/journal/testimony", "/journal/impressions", "/journal/sunday", "/journal/generalconference", "/journal/talks"]
+export const journalpaths = ["/journal", "/journal/testimony", "/journal/impressions", "/journal/sunday", "/journal/generalconference", "/journal/talks"]

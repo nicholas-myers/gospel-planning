@@ -17,29 +17,27 @@ function Journal() {
   };
 
   return (
-    <section>
-      <div>
-        <Route exact path="/journal/entries">
-          <h2>Entries</h2>
-        </Route>
-        <Route path="/journal/testimony">
-          <h2>Testimony</h2>
-        </Route>
-        <Route path="/journal/impressions">
-          <h2>Impressions</h2>
-        </Route>
-        
-        <Route path="/journal/sunday">
-          <h2>Sunday</h2>
-        </Route>
-        <Route path="/journal/generalconference">
-          <h2>General Conference</h2>
-        </Route>
-        <Route path="/journal/talks">
-          <h2>Talks</h2>
-        </Route>
-      </div>
-    </section>
+    <div className="journal">
+      <Route exact path="/journal">
+        <h2>Entries</h2>
+      </Route>
+      <Route path="/journal/testimony">
+        <h2>Testimony</h2>
+      </Route>
+      <Route path="/journal/impressions">
+        <h2>Impressions</h2>
+      </Route>
+
+      <Route path="/journal/sunday">
+        <h2>Sunday</h2>
+      </Route>
+      <Route path="/journal/generalconference">
+        <h2>General Conference</h2>
+      </Route>
+      <Route path="/journal/talks">
+        <h2>Talks</h2>
+      </Route>
+    </div>
   );
 }
 
