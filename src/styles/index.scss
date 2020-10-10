@@ -1,23 +1,62 @@
 * {
-    // background-color: seagreen;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     max-width: 100%;
+    // border: 1px solid black;
+    color: black;
 }
 
+html {
+    font-size: 62.5%;
+}
+
+// styles for header and nav
 header {
+    background-color: seagreen;
     display: flex;
-    flex-flow: row;
     justify-content: space-around;
     align-items: center;
+    height: 15vh;
+    h1 {
+        font-size: 4rem;
+    }
+
     nav {
         width: 50%;
         display: flex;
         justify-content: space-around;
+        align-items: center;
+        a {
+            padding: 1rem;
+            font-size: 2rem;
+            color: black;
+        }
     }
 }
 
-button {
-    background-color: white;
+// styles for content section
+div.content-container {
+    background-color: skyblue;
+    display: flex;
+    flex-flow: row;
+    height: 85vh;
+    div.content {
+        margin: 2rem;
+        width: 80%;
+    }
+    div.side-nav {
+        background-color: #5c413b;
+        width: 20%;
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        justify-content: space-around;
+        a {
+            background-color: #73514a;
+            color: seagreen;
+            font-size: 2rem;
+            padding: 1rem;
+        }
+    }
 }

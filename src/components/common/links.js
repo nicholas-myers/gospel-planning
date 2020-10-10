@@ -1,18 +1,17 @@
 export const homepaths = [
-    "/",
-    "/journal",
+    "/journal/entries",
     "/familychart",
     "/familyplanning",
     "/home-evening",
   ];
-  export const homelinks = ["Home", "Journal", "Chart", "Plan", "Home Evening"];
+  export const homelinks = ["Journal", "Chart", "Plan", "Home Evening"];
   export const journallinks = [
+    "Entries",
     "Testimony",
     "Impressions",
-    "Journal",
+    "Sunday",
     "General Conference",
-    "Sabbath",
     "Talks",
   ];
 
-export const journalpaths = ["/journal/testimony", "/journal/impressions", "/journal/journal", "/journal/generalconference", "/journal/sabbath", "/journal/talks"]
+export const journalpaths = ["/journal/entries", "/journal/testimony", "/journal/impressions", "/journal/sunday", "/journal/generalconference", "/journal/talks"]

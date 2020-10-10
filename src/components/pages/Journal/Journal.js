@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Button, Modal, Layout } from "antd";
+import { Route } from "react-router-dom";
 import "antd/dist/antd.css";
 
 const { Sider } = Layout;
@@ -18,26 +19,25 @@ function Journal() {
   return (
     <section>
       <div>
-          <h2>Journal</h2>
-          <Button>Impressions</Button>
-          <article>Impressions go here.</article>
-          <Button>Testimony</Button>
-          <article>Testimony goes here.</article>
-          <Button onClick={openModel}>Create New Entry</Button>
-          <Modal
-            style={{ backgroundColor: "white" }}
-            visible={isVisible}
-            onCancel={closeModal}
-          ></Modal>
-          <article>
-            A journal Entry goes here. A journal entry has a title, a date, body
-            content.
-          </article>
-          <article>A journal Entry goes here.</article>
-          <article>A journal Entry goes here.</article>
-          <article>A journal Entry goes here.</article>
-          <article>A journal Entry goes here.</article>
-          <article>A journal Entry goes here.</article>
+        <Route exact path="/journal/entries">
+          <h2>Entries</h2>
+        </Route>
+        <Route path="/journal/testimony">
+          <h2>Testimony</h2>
+        </Route>
+        <Route path="/journal/impressions">
+          <h2>Impressions</h2>
+        </Route>
+        
+        <Route path="/journal/sunday">
+          <h2>Sunday</h2>
+        </Route>
+        <Route path="/journal/generalconference">
+          <h2>General Conference</h2>
+        </Route>
+        <Route path="/journal/talks">
+          <h2>Talks</h2>
+        </Route>
       </div>
     </section>
   );
