@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Entries from "./Entries"
 import { Button, Modal, Layout } from "antd";
 import { Route } from "react-router-dom";
 import "antd/dist/antd.css";
@@ -19,7 +20,7 @@ function Journal() {
   return (
     <div className="journal">
       <Route exact path="/journal">
-        <h2>Entries</h2>
+        <Entries />
       </Route>
       <Route path="/journal/testimony">
         <h2>Testimony</h2>
